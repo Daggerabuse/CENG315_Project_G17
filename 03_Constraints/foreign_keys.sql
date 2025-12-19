@@ -1,0 +1,18 @@
+ALTER TABLE ROOM_BILLING
+ADD (
+    CONSTRAINT fk_room_billing_transaction FOREIGN KEY (TransactionID) REFERENCES TRANSACTION(TransactionID),
+    CONSTRAINT fk_room_billing_room FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID) 
+);
+
+
+ALTER TABLE MENU_BILLING
+ADD (
+    CONSTRAINT fk_menu_billing_transaction FOREIGN KEY (TransactionID) REFERENCES TRANSACTION(TransactionID),
+    CONSTRAINT fk_menu_billing_menu FOREIGN KEY (MenuID) REFERENCES MENU(RoomID) 
+);
+
+ALTER TABLE STAFF_TRANSACTION
+ADD(
+    CONSTRAINT fk_staff_transaction FOREIGN KEY (TransactionID) REFERENCES TRANSACTION(TransactionID),
+    CONSTRAINT fk_staff_staff  FOREIGN KEY(StaffId) REFERENCES STAFF(StaffID)
+)
