@@ -25,7 +25,15 @@ CHECK (PaymentMonth IN ('January', 'February', 'March', 'April', 'May', 'June',
 
 ALTER TABLE STUDENT_TRANSACTION
 ADD CONSTRAINT chk_payment_method 
-CHECK (PaymentMethod IN ('Cash', 'Credit Card','Bank Transfer'))
+CHECK (PaymentMethod IN ('Cash', 'Credit Card','Bank Transfer'));
+
+
+-- Defines if the room is a past room of the student or their current room
+ALTER TABLE ROOM_ASSIGNMENT
+ADD CONSTRAINT check_status
+CHECK (AssingmentStatus IN ('Current', 'Past'));
+
+
 
 -- Constraints for STAFF and TASK Table
 
@@ -45,7 +53,12 @@ ADD CONSTRAINT chk_task_type
 CHECK (TaskType IN ('Cleaning', 'Repair', 'Plumbing', 'Electric', 'Maintenance', 'Kitchen'));
 
 
--- Student_PhoneNumber multi value attribute relation
 
-ALTER TABLE Student_PhoneNumber
-ADD CONSTRAINT fk_student FOREIGN KEY (StudentID) REFERENCES STUDENT(StudentID);
+-- Constraints for ROOM Table
+ALTER TABLE ROOM
+ADD (
+    CONSTRAINT check_room_type
+    CHECK (RoomType IN ('Normal', 'Accessible')),
+    CONSTRAINT check_occupancy_status
+    CHECK (OccupancyStatus IN ('Available', 'Full'))
+);
