@@ -43,3 +43,9 @@ CHECK (Salary > 0);
 ALTER TABLE Task
 ADD CONSTRAINT chk_task_type 
 CHECK (TaskType IN ('Cleaning', 'Repair', 'Plumbing', 'Electric', 'Maintenance', 'Kitchen'));
+
+
+-- Student_PhoneNumber multi value attribute relation
+
+ALTER TABLE Student_PhoneNumber
+ADD CONSTRAINT fk_student FOREIGN KEY (StudentID) REFERENCES STUDENT(StudentID);
