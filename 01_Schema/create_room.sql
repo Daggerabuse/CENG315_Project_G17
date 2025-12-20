@@ -3,7 +3,7 @@
 -- OccupancyStatus: Full, Available
 CREATE TABLE ROOM (
     RoomID NUMBER,
-    Block VARCHAR2(1) NOT NULL, 
+    Block VARCHAR2(5) NOT NULL, 
     Floor NUMBER(2) NOT NULL, -- floor ismi sorun olur mu acaba
     MaxCapacity NUMBER(2) NOT NULL,
     CurrentCapacity NUMBER(2) NOT NULL,
@@ -11,3 +11,4 @@ CREATE TABLE ROOM (
     RoomType VARCHAR2(20) NOT NULL,
     Price NUMBER(10, 2) NOT NULL
 );
+
