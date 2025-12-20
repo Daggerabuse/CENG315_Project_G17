@@ -23,3 +23,17 @@ ADD CONSTRAINT pk_task_staff PRIMARY KEY (TaskID, StaffID)
 
 ALTER TABLE TASK 
 ADD CONSTRAINT task_pk PRIMARY KEY(TaskID);
+
+-- Primary Keys for STUDENT and ROOM Tables,
+
+ALTER TABLE STUDENT 
+ADD CONSTRAINT pk_student PRIMARY KEY(StudentID);
+
+ALTER TABLE ROOM
+ADD CONSTRAINT pk_room PRIMARY KEY (RoomID);
+
+
+-- Student_PhoneNumber multi value attribute
+
+ALTER TABLE Student_PhoneNumber
+ADD CONSTRAINT pk_student_phone PRIMARY KEY (StudentID, PhoneNumber);
