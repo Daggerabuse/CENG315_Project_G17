@@ -5,6 +5,5 @@ CREATE TABLE Task (
     ScheduledDate DATE DEFAULT SYSDATE,
     CompletionDate DATE,
     Description VARCHAR2(255),
-    StaffID NUMBER, -- Many-to-One relationship with Staff
     RoomID NUMBER-- Many-to-One relationship with Room
 );
