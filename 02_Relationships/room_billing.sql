@@ -2,6 +2,7 @@
 CREATE TABLE ROOM_BILLING(
     TransactionID NUMBER,
     RoomID NUMBER NOT NULL,
+    StudentID NUMBER NOT NULL,
     MonthsToStay NUMBER NOT NULL
 
 )
