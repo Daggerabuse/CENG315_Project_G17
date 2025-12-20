@@ -34,3 +34,9 @@ ALTER TABLE TASK_STAFF
         CONSTRAINT fk_ts_task FOREIGN KEY (TaskID) REFERENCES TASK(TaskID) ON DELETE CASCADE,
         CONSTRAINT fk_ts_staff FOREIGN KEY (StaffID) REFERENCES STAFF(StaffID) ON DELETE CASCADE
 );
+
+
+-- Student_PhoneNumber multi value attribute relation
+
+ALTER TABLE Student_PhoneNumber
+ADD CONSTRAINT fk_student FOREIGN KEY (StudentID) REFERENCES STUDENT(StudentID);
