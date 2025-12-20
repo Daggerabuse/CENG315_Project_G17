@@ -1,7 +1,8 @@
 ALTER TABLE ROOM_BILLING
 ADD (
     CONSTRAINT fk_room_billing_transaction FOREIGN KEY (TransactionID) REFERENCES TRANSACTION(TransactionID),
-    CONSTRAINT fk_room_billing_room FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID) 
+    CONSTRAINT fk_room_billing_room FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID), 
+    CONSTRAINT fk_room_billing_student FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
 );
 
 
