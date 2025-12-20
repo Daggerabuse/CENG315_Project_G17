@@ -9,3 +9,12 @@ ADD CONSTRAINT pk_menu_billing PRIMARY KEY(TransactionID)
 
 ALTER TABLE STAFF_TRANSACTION 
 ADD CONSTRAINT pk_staff_transaction PRIMARY KEY (TransactionID);
+
+
+-- Primary Keys for STAFF and TASK Tables
+
+ALTER TABLE STAFF 
+ADD CONSTRAINT staff_pk PRIMARY KEY(StaffID);
+
+ALTER TABLE TASK 
+ADD CONSTRAINT task_pk PRIMARY KEY(TaskID);

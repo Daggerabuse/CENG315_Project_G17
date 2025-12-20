@@ -21,3 +21,22 @@ ALTER TABLE STAFF_TRANSACTION
 ADD CONSTRAINT chk_payment_month 
 CHECK (PaymentMonth IN ('January', 'February', 'March', 'April', 'May', 'June', 
                         'July', 'August', 'September', 'October', 'November', 'December'));
+
+
+
+-- Constraints for STAFF and TASK Table
+
+-- Ensure the role is one of the predefined types
+ALTER TABLE Staff
+ADD CONSTRAINT chk_staff_role 
+CHECK (Role IN ('Cleaner', 'Maintenance', 'Security', 'Manager', 'Kitchen Staff'));
+
+-- Ensure salary is a positive value
+ALTER TABLE Staff
+ADD CONSTRAINT chk_staff_salary 
+CHECK (Salary > 0);
+
+-- Ensure task type is valid
+ALTER TABLE Task
+ADD CONSTRAINT chk_task_type 
+CHECK (TaskType IN ('Cleaning', 'Repair', 'Plumbing', 'Electric', 'Maintenance', 'Kitchen'));
