@@ -23,6 +23,9 @@ CHECK (PaymentMonth IN ('January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'));
 
 
+ALTER TABLE STUDENT_TRANSACTION
+ADD CONSTRAINT chk_payment_method 
+CHECK (PaymentMethod IN ('Cash', 'Credit Card','Bank Transfer'))
 
 -- Constraints for STAFF and TASK Table
 

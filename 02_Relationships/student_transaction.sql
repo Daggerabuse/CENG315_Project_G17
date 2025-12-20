@@ -1,0 +1,6 @@
+CREATE TABLE STUDENT_TRANSACTION (
+    TransactionID INT PRIMARY KEY, 
+    StudentID INT NOT NULL,
+    PaymentMethod VARCHAR(20) NOT NULL
+
+)
