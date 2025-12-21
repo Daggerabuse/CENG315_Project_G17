@@ -10,7 +10,7 @@ CHECK (MonthsStayed BETWEEN 1 AND 12);
 
 
 -- Ensures that the number of portions bought is either 1 or 2 per transaction.
-ALTER TABLE MENU_TRANSACTION 
+ALTER TABLE MENU_BILLING
 ADD CONSTRAINT chk_portion_limit 
 CHECK (PortionBought BETWEEN 1 AND 2);
 

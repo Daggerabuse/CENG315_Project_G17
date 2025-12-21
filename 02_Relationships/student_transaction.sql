@@ -3,4 +3,4 @@ CREATE TABLE STUDENT_TRANSACTION (
     StudentID INT NOT NULL,
     PaymentMethod VARCHAR(20) NOT NULL
 
-)
+);

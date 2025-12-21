@@ -5,4 +5,4 @@ CREATE TABLE ROOM_BILLING(
     StudentID NUMBER NOT NULL,
     MonthsToStay NUMBER NOT NULL
 
-)
+);
