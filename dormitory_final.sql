@@ -212,7 +212,7 @@ ALTER TABLE STAFF ADD CONSTRAINT chk_staff_role CHECK (Role IN ('Cleaner', 'Main
 ALTER TABLE STAFF ADD CONSTRAINT chk_staff_salary CHECK (Salary > 0);
 ALTER TABLE TASK ADD CONSTRAINT chk_task_type CHECK (TaskType IN ('Cleaning', 'Repair', 'Plumbing', 'Electric', 'Maintenance', 'Kitchen'));
 ALTER TABLE ROOM ADD (
-    CONSTRAINT check_room_type CHECK (RoomType IN ('Normal', 'Accessible')),
+    CONSTRAINT check_room_type CHECK (RoomType IN ('Standard', 'Accessible')),
     CONSTRAINT check_occupancy_status CHECK (OccupancyStatus IN ('Available', 'Full'))
 );
 ALTER TABLE SUPPLY ADD (
@@ -221,8 +221,8 @@ ALTER TABLE SUPPLY ADD (
 );
 ALTER TABLE MENU_SUPPLY ADD CONSTRAINT check_ms_quantity_used CHECK (QuantityUsed > 0);
 ALTER TABLE TASK_SUPPLY ADD CONSTRAINT check_ts_quantity_used CHECK (QuantityUsed > 0);
-
-
+ALTER TABLE MENU ADD CONSTRAINT check_menu_price CHECK (Price >= 0);
+ALTER TABLE MENU ADD CONSTRAINT check_meal_type CHECK (MealType IN ('Breakfast', 'Lunch', 'Dinner'));
 -- ==========================================
 -- 5. INSERT DATA
 -- ==========================================
