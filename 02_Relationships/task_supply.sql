@@ -1,0 +1,8 @@
+CREATE TABLE TASK_SUPPLY (
+    TaskID INT,
+    SupplyID INT,
+    QuantityUsed DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (TaskID, SupplyID),
+    FOREIGN KEY (TaskID) REFERENCES TASK(TaskID),
+    FOREIGN KEY (SupplyID) REFERENCES SUPPLY(SupplyID)
+);
