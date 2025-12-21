@@ -40,3 +40,13 @@ ADD CONSTRAINT pk_room PRIMARY KEY (RoomID);
 
 ALTER TABLE Student_PhoneNumber
 ADD CONSTRAINT pk_student_phone PRIMARY KEY (StudentID, PhoneNumber);
+
+-- Unique Constraints for SUPPLY Table and MENU_SUPPLY, TASK_SUPPLY Relationships
+ALTER TABLE SUPPLY
+ADD CONSTRAINT pk_supply PRIMARY KEY (SupplyID);
+
+ALTER TABLE MENU_SUPPLY
+ADD CONSTRAINT pk_menu_supply PRIMARY KEY (MenuID, SupplyID);
+
+ALTER TABLE TASK_SUPPLY
+ADD CONSTRAINT pk_task_supply PRIMARY KEY (TaskID, SupplyID);

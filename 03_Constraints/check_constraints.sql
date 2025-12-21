@@ -62,3 +62,21 @@ ADD (
     CONSTRAINT check_occupancy_status
     CHECK (OccupancyStatus IN ('Available', 'Full'))
 );
+
+-- Constraints for SUPPLY Table and MENU_SUPPLY, TASK_SUPPLY Relationships
+
+
+-- Ensure the edge cases
+
+ALTER TABLE SUPPLY
+ADD (
+    CONSTRAINT check_supply_amount CHECK (StockAmount >= 0),
+    CONSTRAINT check_supply_price CHECK (PricePerUnit >= 0)
+);
+
+
+ALTER TABLE MENU_SUPPLY
+ADD CONSTRAINT check_ms_quantity_used CHECK (QuantityUsed > 0);
+
+ALTER TABLE TASK_SUPPLY
+ADD CONSTRAINT check_ts_quantity_used CHECK (QuantityUsed > 0);
