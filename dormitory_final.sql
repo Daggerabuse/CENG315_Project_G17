@@ -712,3 +712,36 @@ BEGIN
     END IF;
 END;
 /
+
+-- Trigger 3:-- Automatically deducts stock when a supply is linked to a menu
+CREATE OR REPLACE TRIGGER trg_update_stock_menu
+AFTER INSERT ON MENU_SUPPLY
+FOR EACH ROW
+BEGIN
+    UPDATE SUPPLY
+    SET StockAmount = StockAmount - :NEW.QuantityUsed
+    WHERE SupplyID = :NEW.SupplyID;
+END;
+/
+
+-- Trigger 4:-- Automatically deducts stock when a supply is used for a task
+CREATE OR REPLACE TRIGGER trg_update_stock_task
+AFTER INSERT ON TASK_SUPPLY
+FOR EACH ROW
+BEGIN
+    UPDATE SUPPLY
+    SET StockAmount = StockAmount - :NEW.QuantityUsed
+    WHERE SupplyID = :NEW.SupplyID;
+END;
+/
+
+-- Trigger 5: Prevents stock from dropping below zero
+CREATE OR REPLACE TRIGGER trg_supply_inventory_check
+BEFORE UPDATE OF StockAmount ON SUPPLY
+FOR EACH ROW
+BEGIN
+    IF :NEW.StockAmount < 0 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Not enough stock for ' || :OLD.SupplyName);
+    END IF;
+END;
+/
