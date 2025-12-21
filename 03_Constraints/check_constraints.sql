@@ -31,7 +31,7 @@ CHECK (PaymentMethod IN ('Cash', 'Credit Card','Bank Transfer'));
 -- Defines if the room is a past room of the student or their current room
 ALTER TABLE ROOM_ASSIGNMENT
 ADD CONSTRAINT check_status
-CHECK (AssingmentStatus IN ('Current', 'Past'));
+CHECK (AssignmentStatus IN ('Current', 'Past'));
 
 
 
