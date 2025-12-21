@@ -3,5 +3,6 @@ CREATE TABLE ROOM_ASSIGNMENT (
     StudentID NUMBER,
     RoomID NUMBER,
     AssignmentDate DATE,
-    AssingmentStatus VARCHAR2(20)
+    AssignmentStatus VARCHAR2(20)
 );
+
