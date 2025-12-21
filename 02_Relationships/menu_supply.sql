@@ -1,0 +1,8 @@
+CREATE TABLE MENU_SUPPLY (
+    MenuID INT,
+    SupplyID INT,
+    Quantity DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (MenuID, SupplyID),
+    FOREIGN KEY (MenuID) REFERENCES MENU(MenuID),
+    FOREIGN KEY (SupplyID) REFERENCES SUPPLY(SupplyID)
+);
