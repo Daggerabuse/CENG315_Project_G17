@@ -16,6 +16,9 @@ ADD CONSTRAINT pk_student_transaction PRIMARY KEY (TransactionID);
 ALTER TABLE ROOM_ASSIGNMENT
 ADD CONSTRAINT pk_room_assignment PRIMARY KEY (StudentID, AssignmentDate);
 
+ALTER TABLE STUDENT_BILLING
+ADD CONSTRAINT pk_student_billing PRIMARY KEY (TransactionID);
+
 -- Primary Keys for STAFF and TASK Tables
 
 ALTER TABLE STAFF 
